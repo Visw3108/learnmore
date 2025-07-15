@@ -18,7 +18,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
 /* Stats Section */
 
 function animateCounter(el, target, duration = 2000) {
@@ -39,14 +38,14 @@ function animateCounter(el, target, duration = 2000) {
 }
 
 function formatNumber(num) {
-  if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M+';
-  if (num >= 1000) return Math.floor(num / 1000) + ' k+';
-  return num + ' +';
+  if (num >= 1000000) return (num / 1000000).toFixed(1) + "M+";
+  if (num >= 1000) return Math.floor(num / 1000) + " k+";
+  return num + " +";
 }
 
 let hasAnimated = false;
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   const section = document.getElementById("stats");
   const sectionTop = section.getBoundingClientRect().top;
 
@@ -54,7 +53,7 @@ window.addEventListener('scroll', () => {
     hasAnimated = true;
 
     // Animate numbers
-    document.querySelectorAll(".stat-number").forEach(stat => {
+    document.querySelectorAll(".stat-number").forEach((stat) => {
       const target = +stat.getAttribute("data-target");
       animateCounter(stat, target);
     });
@@ -67,9 +66,6 @@ window.addEventListener('scroll', () => {
     });
   }
 });
-
-
-
 
 function animateCounter(el, target, duration = 2000) {
   const increment = target / (duration / 16);
@@ -89,23 +85,22 @@ function animateCounter(el, target, duration = 2000) {
 }
 
 function formatNumber(num) {
-  if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M+';
-  if (num >= 1000) return Math.floor(num / 1000) + 'k+';
+  if (num >= 1000000) return (num / 1000000).toFixed(1) + "M+";
+  if (num >= 1000) return Math.floor(num / 1000) + "k+";
   return num;
 }
 
 let animated = false;
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   const section = document.getElementById("intro");
   const top = section.getBoundingClientRect().top;
 
   if (top < window.innerHeight - 100 && !animated) {
     animated = true;
-    document.querySelectorAll('.stat-number').forEach(el => {
-      const target = +el.getAttribute('data-target');
+    document.querySelectorAll(".stat-number").forEach((el) => {
+      const target = +el.getAttribute("data-target");
       animateCounter(el, target);
     });
   }
 });
-
