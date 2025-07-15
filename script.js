@@ -142,3 +142,5 @@ const swiper = new Swiper(".categories-swiper", {
     },
   },
 });
+
+

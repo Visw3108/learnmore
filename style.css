@@ -670,3 +670,141 @@ body {
     max-width: 25%;
   }
 }
+
+
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.black-text {
+  font-weight: 700;
+  color: #000;
+}
+.accent-text {
+  color: #f26a5a;
+  font-weight: 700;
+}
+.course-section {
+  max-width: 1300px;
+  margin: auto;
+  background: #f9f9f9;
+  padding: 80px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-image {
+  position: relative;
+  width: 40%;
+  min-width: 180px;
+}
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.tech {
+  background: #16a085;
+}
+.business {
+  background: #27ae60;
+}
+
+.course-info {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.author img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f26a5a;
+}
+.title {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+}
+.meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+.meta i {
+  color: #f26a5a;
+  margin-right: 6px;
+}
+.rating {
+  font-size: 0.95rem;
+  color: #777;
+}
+.rating i {
+  color: #f26a5a;
+  margin-right: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-card {
+    flex-direction: column;
+  }
+  .course-image {
+    width: 100%;
+    height: 200px;
+  }
+  .course-info {
+    padding: 1.2rem;
+  }
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
