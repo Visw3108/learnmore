@@ -11,6 +11,7 @@ body {
 }
 
 /* === NAVBAR === */
+/* === NAVBAR === */
 .navbar {
   width: 100%;
   position: fixed;
@@ -53,7 +54,7 @@ body {
   font-weight: 700;
 }
 
-/* === TOGGLE === */
+/* === MENU TOGGLE === */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -75,7 +76,7 @@ body {
   border-radius: 3px;
 }
 
-/* === MENU === */
+/* === NAV MENU === */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -89,17 +90,35 @@ body {
   gap: 25px;
 }
 
+/* === NAV LINKS HOVER EFFECT === */
 .nav-links li a {
+  position: relative;
   text-decoration: none;
   color: #000;
   font-weight: 600;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #2ca893;
+  transition: width 0.3s ease;
 }
 
 .nav-links li a:hover {
   color: #2ca893;
 }
 
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* === QUOTE BUTTON === */
 .quote-btn {
   background-color: #f15a3b;
   color: white;
@@ -107,12 +126,17 @@ body {
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .quote-btn:hover {
   background-color: #d7492f;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(241, 90, 59, 0.3);
 }
+
+
 
 /* === HERO SECTION === */
 .hero {
@@ -157,12 +181,16 @@ body {
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .hero-btn:hover {
   background-color: #1e786c;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(44, 168, 147, 0.3);
 }
+
 
 .hero-image {
   flex: 1 1 45%;
