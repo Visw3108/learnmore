@@ -514,8 +514,7 @@ body {
   }
 }
 
-
-
+/* Categories Section */
 .categories-section {
   padding: 80px 10%;
   background-color: #fff5f3;
@@ -530,7 +529,7 @@ body {
 }
 
 .categories-header h2 {
-  font-size: 32px;
+  font-size: 2.5rem;
   font-weight: 800;
 }
 
@@ -541,12 +540,14 @@ body {
   border-radius: 999px;
   text-decoration: none;
   font-weight: 700;
-  box-shadow: 0 10px 25px rgba(44, 168, 147, 0.2);
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .view-more-btn:hover {
   background-color: #1d7465;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(44, 168, 147, 0.3);
 }
 
 .categories-swiper {
@@ -578,7 +579,7 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
   width: 100%;
-  max-width: 260px;
+  max-width: 340px;
   min-height: 320px;
   display: flex;
   flex-direction: column;

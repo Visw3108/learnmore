@@ -105,15 +105,13 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
-
-
+/* Categories Section */
 // Scroll fade-in animation
 const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
+  (entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add("visible");
         observer.unobserve(entry.target);
       }
     });
@@ -121,26 +119,26 @@ const observer = new IntersectionObserver(
   { threshold: 0.1 }
 );
 
-document.querySelectorAll('.fade-in').forEach(el => {
+document.querySelectorAll(".fade-in").forEach((el) => {
   observer.observe(el);
 });
 
 // Swiper config
-const swiper = new Swiper('.categories-swiper', {
+const swiper = new Swiper(".categories-swiper", {
   spaceBetween: 20,
   grabCursor: true,
   breakpoints: {
     0: {
-      slidesPerView: 'auto'
+      slidesPerView: "auto",
     },
     640: {
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     768: {
-      slidesPerView: 3
+      slidesPerView: 3,
     },
     1024: {
-      slidesPerView: 4
-    }
-  }
+      slidesPerView: 4,
+    },
+  },
 });
