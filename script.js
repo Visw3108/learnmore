@@ -108,30 +108,39 @@ window.addEventListener("scroll", () => {
 
 
 
- const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
+// Scroll fade-in animation
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+document.querySelectorAll('.fade-in').forEach(el => {
+  observer.observe(el);
+});
+
+// Swiper config
+const swiper = new Swiper('.categories-swiper', {
+  spaceBetween: 20,
+  grabCursor: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 'auto'
     },
-    { threshold: 0.1 }
-  );
-
-  document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-  });
-
-  // Swiper setup
-  const swiper = new Swiper('.categories-swiper', {
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    grabCursor: true,
-    breakpoints: {
-      640: { slidesPerView: 2 },
-      768: { slidesPerView: 3 },
-      1024: { slidesPerView: 4 }
+    640: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
+    },
+    1024: {
+      slidesPerView: 4
     }
-  });
+  }
+});
