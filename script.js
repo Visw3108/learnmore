@@ -218,3 +218,43 @@ modal.addEventListener("click", (e) => {
     iframe.src = "";
   }
 });
+
+
+/* Resource Form Section */
+// Form validation and submission
+const resourceFormEl = document.getElementById("resourceForm");
+
+resourceFormEl.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const firstNameValue = document.getElementById("firstName").value.trim();
+  const lastNameValue = document.getElementById("lastName").value.trim();
+  const emailValue = document.getElementById("email").value.trim();
+  const queryMessageValue = document.getElementById("message").value.trim();
+
+  if (!firstNameValue || !lastNameValue || !emailValue || !queryMessageValue) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  alert("Thank you! Your message has been submitted.");
+  resourceFormEl.reset();
+});
+
+// Intersection Observer with renamed const
+const formObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const observedFormBox = entry.target;
+        observedFormBox.classList.add("show");
+        formObserver.unobserve(observedFormBox);
+      }
+    });
+  },
+  {
+    threshold: 0.2,
+  }
+);
+
+formObserver.observe(document.getElementById("formBox"));
