@@ -143,7 +143,6 @@ const swiper = new Swiper(".categories-swiper", {
   },
 });
 
-
 /* Learning Progress Section */
 const learningSectionElement = document.getElementById("progress-section");
 const progressFillElements = document.querySelectorAll(".progress-fill");

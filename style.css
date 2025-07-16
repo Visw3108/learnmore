@@ -415,7 +415,7 @@ body {
   margin-bottom: 5px;
 }
 
-.stat-label.green {
+.stat-label.ggreen {
   color: #2ca893;
 }
 
@@ -807,7 +807,6 @@ h2 {
   }
 }
 
-
 /* Learning Progress Section */
 
 .learning-progress-section {
@@ -834,28 +833,6 @@ h2 {
   display: block;
   z-index: 1;
   position: relative;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 87, 87, 0.9);
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-.play-button::before {
-  content: "";
-  border-left: 18px solid white;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
 }
 
 .image-decor {
@@ -914,6 +891,10 @@ h2 {
   background-color: #eee;
   border-radius: 10px;
   overflow: hidden;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .progress-fill {
@@ -921,6 +902,10 @@ h2 {
   border-radius: 10px;
   width: 0;
   transition: width 2s ease-in-out;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 .green {
