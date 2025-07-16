@@ -144,3 +144,50 @@ const swiper = new Swiper(".categories-swiper", {
 });
 
 
+/* Learning Progress Section */
+const learningSectionElement = document.getElementById("progress-section");
+const progressFillElements = document.querySelectorAll(".progress-fill");
+const percentageTextElements = document.querySelectorAll(".percent");
+let hasAnimatedOnce = false;
+
+function animatePercentageCounter(textElement, targetPercentage) {
+  let currentPercentage = 0;
+  const animationDuration = 1500;
+  const frameRate = 20;
+  const incrementStep = targetPercentage / (animationDuration / frameRate);
+
+  const countInterval = setInterval(() => {
+    currentPercentage += incrementStep;
+    if (currentPercentage >= targetPercentage) {
+      currentPercentage = targetPercentage;
+      clearInterval(countInterval);
+    }
+    textElement.textContent = Math.round(currentPercentage) + "%";
+  }, frameRate);
+}
+
+const progressObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !hasAnimatedOnce) {
+        progressFillElements.forEach((barElement) => {
+          const targetWidth = barElement.getAttribute("data-width");
+          barElement.style.width = targetWidth;
+        });
+
+        percentageTextElements.forEach((percentSpan) => {
+          const finalValue = +percentSpan.getAttribute("data-target");
+          animatePercentageCounter(percentSpan, finalValue);
+        });
+
+        hasAnimatedOnce = true;
+        progressObserver.unobserve(learningSectionElement);
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+progressObserver.observe(learningSectionElement);
