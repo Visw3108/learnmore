@@ -190,3 +190,31 @@ const progressObserver = new IntersectionObserver(
 );
 
 progressObserver.observe(learningSectionElement);
+
+/* LATEST COURSE VIDEOS SECTION */
+
+const videoCards = document.querySelectorAll(".video-card");
+const modal = document.getElementById("video-modal");
+const iframe = document.getElementById("video-iframe");
+const closeModal = document.getElementById("modal-close");
+
+videoCards.forEach((card) => {
+  card.querySelector(".play-button").addEventListener("click", (e) => {
+    e.stopPropagation();
+    const videoURL = card.getAttribute("data-video");
+    iframe.src = videoURL + "?autoplay=1";
+    modal.style.display = "flex";
+  });
+});
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+  iframe.src = "";
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    iframe.src = "";
+  }
+});
