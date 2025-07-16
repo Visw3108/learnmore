@@ -517,7 +517,7 @@ body {
 /* Categories Section */
 .categories-section {
   padding: 80px 10%;
-  background-color: #fff5f3;
+  background: linear-gradient(to left, #fdfcfb, #e2d1c3);
 }
 
 .categories-header {
@@ -638,11 +638,19 @@ body {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease;
+  -webkit-transition: ;
+  -moz-transition: ;
+  -ms-transition: ;
+  -o-transition: ;
 }
 
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
 }
 
 /* Swipe hint */
@@ -1003,10 +1011,9 @@ h2 {
 /* LATEST COURSE VIDEOS SECTION */
 
 .latest-course-videos-section {
-  max-width: 1200px;
   margin: auto;
   padding: 40px;
-  background-color: #fff5f3;
+  background: linear-gradient(to right, #fdfcfb, #e2d1c3);
 }
 
 .section-heading {
